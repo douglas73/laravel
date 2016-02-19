@@ -8,7 +8,7 @@
         @include('common.errors')
 
         <!-- New Task Form -->
-        <form action="/task" method="POST" class="form-horizontal">
+        <form action="{{ URL('task') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
             <!-- Task Name -->
@@ -16,7 +16,7 @@
                 <label for="task" class="col-sm-3 control-label">Task</label>
 
                 <div class="col-sm-6">
-                    <input type="text" name="name" id="task-name" class="form-control">
+                    <input type="text" name="nome" id="task-name" class="form-control">
                 </div>
             </div>
 

@@ -40,14 +40,14 @@ Route::get('/', function(){
 
 Route::post('/task', function (Request $request) {
     $validator = Validator::make($request->all(), [
-        'name'  => 'required|max:255',
+        'nome'  => 'required|max:255',
     ]);
     if($validator->fails()){
         return redirect('/')
             ->withInput()
             ->withErrors($validator);
     }
-
+    // dd($request->nome);
     $task = new \App\Task();
     $task->nome = $request->nome;
     $task->save();
