@@ -35,7 +35,7 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::get('/', function(){
     $tasks =  Task::orderBy('created_at', 'asc')->get();
-   return view('tasks',['task' => $tasks]);
+    return view('tasks',compact('tasks'));
 });
 
 Route::post('/task', function (Request $request) {
@@ -57,5 +57,7 @@ Route::post('/task', function (Request $request) {
 });
 
 Route::delete('task/{id}', function($id){
+    Task::findOrFail($id)->delete();
+    return redirect('/');
 
 });

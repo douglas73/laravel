@@ -1,5 +1,6 @@
 
 @if(isset($errors))
+    {{ var_dump($errors->all()) }}
     @if (count($errors) > 0)
         <!-- Form Error List -->
         <div class="alert alert-danger">
