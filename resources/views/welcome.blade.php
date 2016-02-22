@@ -36,6 +36,9 @@
         </style>
     </head>
     <body>
+
+            <h1>Aviso: {{ session('mensagem') }}</h1>
+
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>

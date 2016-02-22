@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon;
 use App\User;
 use App\Task;
 use Illuminate\Http\Request;
@@ -33,10 +34,12 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
-Route::get('/', function(){
+Route::get('/',  ['middleware' =>'douglas', function(){
+    //dd(Carbon::today()->format('Y-m-d'));
+     // dd(Carbon\Carbon::today()->format('Y-m-d'));
     $tasks =  Task::orderBy('created_at', 'asc')->get();
     return view('tasks',compact('tasks'));
-});
+}]);
 
 Route::post('/task', function (Request $request) {
     $validator = Validator::make($request->all(), [
