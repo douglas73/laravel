@@ -13,7 +13,7 @@
             </div>
             <hr/>
             <!-- New Task Form -->
-            <form action="{{ URL('task') }}" method="POST" class="form-horizontal">
+            <form action="{{ url('task') }}" method="POST" class="form-horizontal">
                 {{ csrf_field() }}
 
                 <!-- Task Name -->

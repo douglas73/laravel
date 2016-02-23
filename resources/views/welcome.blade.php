@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
-
+        <title>CDTS APP</title>
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+        <!-- Bootstrap -->
+        <link href="{{ asset("css/app.css") }}" rel="stylesheet" type="text/css" />
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
     </head>
     <body>
 
-            <h1>Aviso: {{ session('mensagem') }}</h1>
+            <h1>Info: {{ session('mensagem') }}</h1>
 
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="text-center"><span style="font-size: 30px; font-weight: bolder; font-family: Calibri, Helvetica, Arial;">CDTS</span></div>
             </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span class="label label-success label-pill pull-xs-right badge">14</span>
+                                    <a href="{{ url('lista') }}">Carregar Lista</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="label label-default label-pill pull-xs-right">2</span>
+                                    Dapibus ac facilisis in
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="label label-default label-pill pull-xs-right">1</span>
+                                    Morbi leo risus
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
         </div>
+
     </body>
 </html>

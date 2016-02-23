@@ -34,6 +34,11 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
+
+Route::get('lista', ['uses' => 'TesteController@lista', 'as' =>'lista']);
+
+
+
 Route::get('/',  ['middleware' =>'douglas', function(){
     //dd(Carbon::today()->format('Y-m-d'));
      // dd(Carbon\Carbon::today()->format('Y-m-d'));
@@ -64,3 +69,26 @@ Route::delete('task/{id}', function($id){
     return redirect('/');
 
 });
+
+/**
+ *  ROTA QUE UTILIZA CONTROLES RESTFUL (CONTROLLER DE RECURSOS)
+ *
+ * Para criar esta tipo de rota,  pode-se usar o artisan make:controller nomedocontroller --resource
+ */
+
+/**
+ * Esta rota, cria automaticamente  roas para todos os verbos que podem ser chamdo  da seguinte forma:
+ *      VERBO       | CAMINHO               |   AÇÃO      | NOME DA ROTA
+ * ======================================================================
+ *      GET	        /recursos	                index	    recursos.index
+        GET	        /recursos/create	        create	    recursos.create
+        POST	    /recursos	                store	    recursos.store
+        GET	        /recursos/{photo}	        show	    recursos.show
+        GET	        /recursos/{photo}/edit	    edit	    recursos.edit
+        PUT/PATCH	/recursos/{photo}	        update	    recursos.update
+        DELETE	    /recursos/{photo}	        destroy	    recursos.destroy
+ */
+Route::resource('recursos', 'RestfulController');
+
+
+Route::get('requisicao', 'RestfulController@teste');

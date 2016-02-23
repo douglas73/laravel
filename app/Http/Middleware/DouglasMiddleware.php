@@ -18,7 +18,7 @@ class DouglasMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Carbon::today()->format('Y-m-d') != '2016-02-22'){
+        if(Carbon::today()->format('Y-m-d') != '2016-02-23'){
 
             session()->flash('mensagem', '<BR />DOUGLAS MIDDLEWARE<hr />Você nao esta na data 2016-02-22');
             Task::create([
